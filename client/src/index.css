@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 141 50% 98%;
+    --foreground: 146 40% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 146 40% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 146 40% 10%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355 100% 100%;
+    --secondary: 120 60% 96%;
+    --secondary-foreground: 146 40% 10%;
+    --muted: 146 20% 92%;
+    --muted-foreground: 146 10% 40%;
+    --accent: 142 70% 90%;
+    --accent-foreground: 146 40% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 146 20% 90%;
+    --input: 146 20% 90%;
+    --ring: 142 76% 36%;
+    --chart-1: 142 76% 40%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 133 74% 36%;
+    --chart-5: 110 87% 30%;
+    --radius: 0.75rem;
+  }
+  .dark {
+    --background: 146 40% 10%;
+    --foreground: 146 10% 98%;
+    --card: 146 40% 12%;
+    --card-foreground: 146 10% 98%;
+    --popover: 146 40% 12%;
+    --popover-foreground: 146 10% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355 100% 100%;
+    --secondary: 146 40% 18%;
+    --secondary-foreground: 146 10% 98%;
+    --muted: 146 40% 20%;
+    --muted-foreground: 146 10% 70%;
+    --accent: 146 40% 18%;
+    --accent-foreground: 146 10% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 146 40% 25%;
+    --input: 146 40% 25%;
+    --ring: 142 76% 36%;
+    --chart-1: 142 76% 50%;
+    --chart-2: 173 58% 45%;
+    --chart-3: 197 37% 50%;
+    --chart-4: 133 74% 46%;
+    --chart-5: 110 87% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-scaleUp {
+    animation: scaleUp 0.5s ease-out;
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .animate-pulse-gentle {
+    animation: pulseGentle 2s ease-in-out infinite;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/30 dark:bg-black/30;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes pulseGentle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+}
